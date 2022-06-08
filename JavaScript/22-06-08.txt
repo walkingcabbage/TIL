@@ -1,0 +1,135 @@
+※코드의 가독성을 높이는 방법
+
+
+    1)
+
+    if (condition) doSomething()
+
+    과 같이 단 한 줄짜리 구문에도 
+
+    if(n<0){
+     alert(`Power${n} is not supported`);
+    }
+
+    와 같이 중괄호를 포함하여 가독성을 높이자.
+
+    if (cond) return null 처럼 너무 짧은 코드라면 한 번에 몰아서 사용해도 괜찮다. 
+    하지만 전자가 훨씬 가독성이 높으므로 저 방법을 이용해보자.
+ 
+
+    2)
+
+    가로로 길게 늘어진 코드를 읽는 개발자는 없다. 
+
+    백틱(`)을 이용하여 문자열을 나누자.
+
+    let str = `
+    ECMA International's TC39 is a group of JavaScript developers,
+    implementers, academics, and more, collaborating with the community
+    to maintain and evolve the definition of JavaScript.
+    `;
+
+    조건문이라면 
+
+    if (
+    id === 123 &&
+    moonPhase === 'Waning Gibbous' &&
+    zodiacSign === 'Libra'
+    ) {
+    letTheSorceryBegin();
+    }
+
+    이런 식으로 작성이 가능하니 사용해보자.
+
+
+    3)
+
+    들여쓰기를 습관화 하자. 
+
+    최근에는 탭보다 스페이스를 이용하여 들여쓰는 법이 더 우위에 있다.
+
+    show(parameters,
+         aligned, // 스페이스 다섯 개를 이용해 들여쓰기 함
+         one,
+         after,
+         another
+      ) {
+      // ...
+    }
+
+    이런식으로 스페이스를 이용하면 더 유연하게 들여쓰기를 할 수 있다.
+
+    function pow(x, n) {
+      let result = 1;
+      //              <--
+      for (let i = 0; i < n; i++) {
+        result *= x;
+      }
+      //              <--
+      return result;
+    }
+
+    세로로도 들여쓰기를 하여 가독성을 높이자.
+
+
+    4)
+    
+    세미콜론(;)을 이용하자.
+
+    자바스크립트 엔진에 의해 무시되더라도 모든 구문 끝엔 세미콜론을 써주자.
+
+    오류를 최대한으로 줄일 수 있는 방법이다.
+
+
+    5)
+
+    중첩레벨을 신경쓰자.
+
+    가능하면 너무 깊은 중첩문을 사용하지 말자.
+
+    for (let i = 0; i < 10; i++) {
+      if (cond) {
+        ... // <- 중첩 레벨이 하나 더 늘어났습니다.
+      }
+    }
+
+    위의 코드는 continue 지시자를 사용하여 아래처럼 변경 가능하다.
+
+    for (let i = 0; i < 10; i++) {
+      if (!cond) continue;
+      ...  // <- 추가 중첩 레벨이 추가되지 않습니다.
+    }
+
+
+    6)
+
+    함수의 위치는 어디에 모아놓는 게 좋을까?
+
+    코드를 먼저 짠 후 함수를 나중에 선언하는 방법이 좋다.
+
+    사람들은 코드가 '무엇을 하는지'를 생각하며 코드를 읽기 때문에 코드가 먼저 나오는 것이 자연스럽다.
+
+    7)
+
+    ESLint 사용법
+        i) npm istall eslint --save-dev //eslint 설치
+        ii) npm init @eslint/config //초기화
+        iii) npx eslint 'filename'.js (--fix) //실행 및 수정까지
+        iv)
+        {
+        "rules": {
+            "semi": ["error", "always"],
+            "quotes": ["error", "double"]
+            }
+        }   
+
+
+※변수명을 지어보자
+
+    1) userName이나 shoppingCart처럼 사람이 읽을 수 있는 이름 사용
+    2) a,b,c 와같은 짧은 이름은 피하기
+    3) 최대한 서술적, 간결하게 명명하기. data나 value는 나쁜 이름의 예시이다.
+    4) 자신만의 규칙, 소속된 팀의 규칙에 따른다. 
+    5) 재사용을 하기보단 새로운 변수를 꾸준히 만드는 게으르지 않은 개발자가 되자. 
+
+
