@@ -1,0 +1,73 @@
+※반응형 웹을 만들기 위한 나만의 지침
+
+1) meta태그(viewport)이용
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    width를 device-width라고 설정해주면 접속하고있는 기기에 맞춰서 너비가 조절된다.
+
+    또한 initial-scale은 처음 접속했을 떄 보여질 확대 배율.
+
+    user-scalable (yes/no) -> 사용자 축소/확대 허용 여부
+
+
+2) 미디어 쿼리
+
+    @media 쿼리를 사용한다면 반응형 웹을 쉽게 만들 수 있다.
+
+    .title {
+      font-size: 40px;
+    }
+ 
+    @media (max-width: 600px) {
+      .title {
+        font-size: 20px;
+      }
+    }
+
+    타이틀의 크기는 40px, 하지만 600px보다 작은 화면에선 20px로 줄인다.
+
+
+3) 믹스인
+
+    @mixin을 이용하여 분기점을 쉽게 관리하자.
+
+        // Break Point
+    $tablet: 768px;
+    $laptop: 1020px;
+    $desktop: 1400px;
+    
+    
+    // Mixins
+    @mixin tablet {
+      @media (min-width: #{$tablet}) {
+        @content;
+      }
+    }
+    
+    @mixin laptop {
+      @media (min-width: #{$laptop}) {
+        @content;
+      }
+    }
+    
+    
+    @mixin desktop {
+      @media (min-width: #{$desktop}) {
+        @content;
+      }
+    }
+
+    SCSS파일을 이용하여 믹스인과 미디어쿼리를 관리하자.
+
+    사용할 땐
+
+       .logo {
+     width: 20px;
+    
+     @include desktop {
+       width: 40px;
+     }
+    }
+
+    @include를 이용하여 불러올 수 있다.
