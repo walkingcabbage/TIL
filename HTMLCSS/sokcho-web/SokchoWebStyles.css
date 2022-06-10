@@ -56,25 +56,44 @@ table {
 }
 html,body{
     height: 100%;
-}
-.main-container{
-	height: 100%;
 	background-color: #C1C8E4;
 }
+.main-container{
+	max-width: 1100px;
+	height: 100%;
+	margin: 0 auto;
+}
 .intro-container{
-	height: 100vh;
-	background-color: white;
-	display: flex;
-	justify-content: center;
-	align-items : center;
+background-color: white;
+max-width: 1100px;
+margin-top: 50px;
 }
 .intro{
-	background-image: url("./images/intro_img.jpg");
-	background-size: cover;
-	width: calc(100% - 20px);
-	height: calc(100% - 20px);
-
+width: 100%;
 }
+.intro-title{
+	width: calc(100% - 30px);
+	margin: auto;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.intro-img{
+	position: relative;
+	width: 100%;
+	vertical-align: middle;
+	object-fit: none;
+}
+.intro-text{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate( -50%, -50% );
+	text-align: center;
+}
+.intro-text h1{
+	font-size: 60px;
+	margin-bottom: 10px;
+}
+
 .about-container{
-	height: 80vh;
 }
