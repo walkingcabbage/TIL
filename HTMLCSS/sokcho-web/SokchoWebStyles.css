@@ -72,22 +72,23 @@ margin-top: 50px;
 width: 100%;
 }
 .intro-title{
-	width: calc(100% - 30px);
+	width: calc(100% - 3%);
 	margin: auto;
-	padding-top: 15px;
-	padding-bottom: 15px;
+	padding-top: 2%;
+	padding-bottom: 2%;
 }
 .intro-img{
 	position: relative;
 	width: 100%;
+	max-height: 630px;
 	vertical-align: middle;
 	object-fit: none;
 }
 .intro-text{
 	position: absolute;
-	top: 50%;
+	top: 30%;
 	left: 50%;
-	transform: translate( -50%, -50% );
+	transform: translate( -50%,0 );
 	text-align: center;
 }
 .intro-text h1{
@@ -96,4 +97,65 @@ width: 100%;
 }
 
 .about-container{
+	width: 100%;
+	max-height: 700px;
+	overflow:hidden;
+}
+.about-left{
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+.about-right{
+	width: 50%;
+	height: 100%;
+	display:inline-block;
+}
+.about-img{
+	margin: 10px;
+	width: calc(100% - 20px);
+	height: calc(100% - 20px);
+	object-fit: none;
+}
+.about-title{
+	margin-top: 34px;
+    font-size: 2.587vw;
+}
+.about-article{
+	margin-top: 20px;
+	line-height: 1.5em;
+	margin-right: 30px;
+	font-size: 1.587vw;
+	
+}
+.sights-containaer{
+	width: 100%;
+	max-height: 600px;
+
+}
+.sights-top{
+height: 20%;
+text-align: center;
+font-size: 3vw;
+padding-top: 10px;
+padding-bottom: 10px;
+}
+.sights-top hr{
+	width: 10vw;
+}
+.sights-bottom{
+height: 80%;
+max-height: 560px;
+}
+.sight-content1{
+	float: left;
+	width: 33%;
+}
+.sight-content2{
+	display: inline-block;
+	width: 33%;
+}
+.sight-content3{
+	display: inline-block;
+	width: 33%;
 }
